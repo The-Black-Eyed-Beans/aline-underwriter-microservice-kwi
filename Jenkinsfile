@@ -116,8 +116,8 @@ pipeline {
 
     post {
         always {
-            sh "docker image rm ${PROJECT}-kwi:${COMMIT_HASH}"
             sh "docker image rm ${AWS_ID}.dkr.ecr.${REGION}.amazonaws.com/${PROJECT}-kwi:${COMMIT_HASH}"
+            sh "docker image rm ${AWS_ID}.dkr.ecr.${REGION}.amazonaws.com/${PROJECT}-kwi:latest"
             sh "mvn clean"
         }
     }
