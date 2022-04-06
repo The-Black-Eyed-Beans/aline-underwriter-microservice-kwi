@@ -12,7 +12,7 @@ pipeline {
     environment {
         AWS_ID = credentials("AWS-ACCOUNT-ID")
         REGION = credentials("REGION-KWI")
-        APP = "account"
+        APP = "underwriter"
         PROJECT = "underwriter-microservice"
         COMMIT_HASH = "${sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()}"
         APP_PORT = 8071
